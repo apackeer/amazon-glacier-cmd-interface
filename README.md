@@ -1,8 +1,3 @@
-**Glacier command line utility was renamed from `glacier` to `glacier-cmd`,   
-because of inconsistencies with boto.**
-
-**For everybody having problems with install, don't forget to install git**
-
 Amazon Glacier CLI
 ==================
 
@@ -12,15 +7,15 @@ and downloading archives and bookkeeping of created archives.
 Installation:
 -------------
 
-Required libraries are glaciercorecalls (temporarily, while we wait for glacier 
-support to land in boto's develop branch) and boto - at the moment you still 
+Required libraries are glaciercorecalls (temporarily, while we wait for glacier
+support to land in boto's develop branch) and boto - at the moment you still
 need to use development branch of boto.
 
-You also need to install GIT, with something like `apt-get install git`, 
+You also need to install GIT, with something like `apt-get install git`,
 because boto sources are downloaded from repository.
 
     >>> python setup.py install
-    >>> glacier-cmd [args] 
+    >>> glacier-cmd [args]
 
 Development:
 ------------
@@ -55,7 +50,7 @@ You can also pass in all these options as environemnt variables:
 
     $ aws_access_key=your_access_key aws_secret_key=your_secret_key region=us-east-1 bookkeeping=True bookkeeping-domain-name=your_simple_db_domain_name glacier [args]
 
-It doesn't matter if option names are upper-case or lower-case or if they have 
+It doesn't matter if option names are upper-case or lower-case or if they have
 `aws_` in string. Currently only section names must be lower-case.
 
 We created a special feature called bookkeeping, where we keep a cache of all uploaded
@@ -137,11 +132,11 @@ report will come out every 128Mb. For more details, run:
 
     $ glacier-cmd upload -h
 
-You have two options to retrieve an archive - first one is `download`, 
+You have two options to retrieve an archive - first one is `download`,
 second one is `getarchive`
 
-If you use `download`, you will have to uniquely identify the file either by 
-its file name, its description, or limit the search by region and vault. 
+If you use `download`, you will have to uniquely identify the file either by
+its file name, its description, or limit the search by region and vault.
 If that is not enough you should use `getarchive` and specify the archive ID of
 the archive you want to retrieve:
 
